@@ -5,6 +5,6 @@ import com.ucn.gestion.proyecto.app.model.Ayuda;
 
 public interface AyudaService {
 
-	public Ayuda guardar(AyudaDto ayudaDto);
+	public Ayuda guardar(AyudaDto ayudaDto) throws Exception;
 
 }

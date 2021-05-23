@@ -4,6 +4,6 @@ import com.ucn.gestion.proyecto.app.dto.ActividadDto;
 import com.ucn.gestion.proyecto.app.model.Actividad;
 
 public interface ActividadService {
-	public Actividad guardar(ActividadDto actividadDto);
+	public Actividad guardar(ActividadDto actividadDto) throws Exception;
 
 }

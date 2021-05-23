@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.ucn.gestion.proyecto.app.dto.ActividadDto;
 import com.ucn.gestion.proyecto.app.model.Actividad;
+import com.ucn.gestion.proyecto.app.model.Ayuda;
 import com.ucn.gestion.proyecto.app.repository.ActividadRepository;
 
 @Service
@@ -15,10 +16,14 @@ public class ActividadServiceImpl implements ActividadService{
 	ActividadRepository actividadRepository;
 
 	@Override
-	public Actividad guardar(ActividadDto actividadDto) {
-		Actividad actividad = new Actividad(actividadDto.getNombre(), actividadDto.getDescripcion(), actividadDto.getEvidencia(), actividadDto.getRecomendacion(), 
-				actividadDto.getFechaInicio(), actividadDto.getEstado(), actividadDto.getFechaInFin());
-		return actividadRepository.save(actividad);
+	public Actividad guardar(ActividadDto actividadDto)throws Exception  {
+		try {
+			Actividad actividad = new Actividad(actividadDto.getNombre(), actividadDto.getDescripcion(), actividadDto.getEvidencia(), actividadDto.getRecomendacion(), 
+					actividadDto.getFechaInicio(), actividadDto.getEstado(), actividadDto.getFechaInFin());
+			return actividadRepository.save(actividad);
+		} catch (Exception e) {
+		     throw new Exception(e.getMessage());
+	    }
 	}
 
 }

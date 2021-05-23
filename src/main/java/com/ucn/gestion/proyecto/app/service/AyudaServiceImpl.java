@@ -14,9 +14,13 @@ public class AyudaServiceImpl implements AyudaService{
 	AyudaRepository ayudaRepository;
 
 	@Override
-	public Ayuda guardar(AyudaDto ayudaDto) {
-		Ayuda ayuda = new Ayuda(ayudaDto.getNombre(), ayudaDto.getDescripcion(), ayudaDto.getEnlace(), ayudaDto.getArchivo());
-		return ayudaRepository.save(ayuda);
+	public Ayuda guardar(AyudaDto ayudaDto) throws Exception {
+		try {
+			Ayuda ayuda = new Ayuda(ayudaDto.getNombre(), ayudaDto.getDescripcion(), ayudaDto.getEnlace(), ayudaDto.getArchivo());
+			return ayudaRepository.save(ayuda);
+		} catch (Exception e) {
+		     throw new Exception(e.getMessage());
+	    }
 	}
 
 }

@@ -36,7 +36,7 @@ public class ActividadController {
 			espuestaDTO.setEstadoDelaOperacion(true);
 		}
 		} catch (Exception e) {
-			espuestaDTO.setMensaje("Ocurrió un error guardando la actividad");
+			espuestaDTO.setMensaje("Ocurrió un error guardando la actividad, si el error persiste debe reportarlo a la mesa de servicio.");
 			return new ResponseEntity<RespuestaDTO>(espuestaDTO, HttpStatus.INTERNAL_SERVER_ERROR);
 
 		}

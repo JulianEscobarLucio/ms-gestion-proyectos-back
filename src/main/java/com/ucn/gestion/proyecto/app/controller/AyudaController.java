@@ -37,14 +37,14 @@ public class AyudaController {
 		
 		try {
 		if(ayudaService.guardar(ayudaDto) == null) {
-			espuestaDTO.setMensaje("La ayuda no fue guardada, intentelo de nuevo más tarde.");	
+			espuestaDTO.setMensaje("La ayuda no fue guardada, intentelo de nuevo más tarde");	
 			espuestaDTO.setEstadoDelaOperacion(false);
 		} else {
 			espuestaDTO.setMensaje("La ayuda fue guardada con éxito.");
 			espuestaDTO.setEstadoDelaOperacion(true);
 		}
 		} catch (Exception e) {
-			espuestaDTO.setMensaje("Ocurrió un error guardando la ayuda");
+			espuestaDTO.setMensaje("Ocurrió un error guardando la ayuda, si el error persiste debe reportarlo a la mesa de servicio.");
 			return new ResponseEntity<RespuestaDTO>(espuestaDTO, HttpStatus.INTERNAL_SERVER_ERROR);
 
 		}
